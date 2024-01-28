@@ -1,5 +1,4 @@
-
-public class HealthAndManaPowerUp : IVisitor
+public class HealthAndManaPowerUp : BasePowerUp
 {
     private int Health { get; }
     private int Mana { get; }
@@ -10,7 +9,7 @@ public class HealthAndManaPowerUp : IVisitor
         Mana = mana;
     }
 
-    public void Visit(IVisitable visitable)
+    public override void Visit(IVisitable visitable)
     {
         switch (visitable)
         {
@@ -27,7 +26,7 @@ public class HealthAndManaPowerUp : IVisitor
     {
         healthComponent.ReceiveHealth(Health);
     }
-    
+
     private void Visit(ManaComponent manaComponent)
     {
         manaComponent.ReceiveMana(Mana);

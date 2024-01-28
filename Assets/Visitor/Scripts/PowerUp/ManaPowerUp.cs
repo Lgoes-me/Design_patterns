@@ -1,13 +1,13 @@
-﻿public class ManaPowerUp: IVisitor
+﻿public class ManaPowerUp : BasePowerUp
 {
     private int Mana { get; }
-        
+
     public ManaPowerUp(int mana)
     {
         Mana = mana;
     }
 
-    public void Visit(IVisitable visitable)
+    public override void Visit(IVisitable visitable)
     {
         switch (visitable)
         {
@@ -16,7 +16,7 @@
                 break;
         }
     }
-    
+
     private void Visit(ManaComponent manaComponent)
     {
         manaComponent.ReceiveMana(Mana);

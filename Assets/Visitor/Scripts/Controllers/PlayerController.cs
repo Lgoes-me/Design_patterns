@@ -1,15 +1,13 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [field: SerializeField] private List<BasePlayerComponent> PlayerComponents { get; set; }
-    
-    public void ReceivePowerUp(HealthAndManaPowerUp healthAndManaPowerUp)
+    [field: SerializeField] private HealthComponent HealthComponent { get; set; }
+    [field: SerializeField] private ManaComponent ManaComponent { get; set; }
+
+    public void ReceivePowerUp(BasePowerUp powerUp)
     {
-        foreach (var component in PlayerComponents)
-        {
-            component.Accept(healthAndManaPowerUp);
-        }
+        HealthComponent.Accept(powerUp);
+        ManaComponent.Accept(powerUp);
     }
 }

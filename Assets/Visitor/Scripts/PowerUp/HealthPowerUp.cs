@@ -1,13 +1,13 @@
-﻿public class HealthPowerUp : IVisitor
+﻿public class HealthPowerUp : BasePowerUp
 {
     private int Health { get; }
-    
+
     public HealthPowerUp(int health)
     {
         Health = health;
     }
-    
-    public void Visit(IVisitable visitable)
+
+    public override void Visit(IVisitable visitable)
     {
         switch (visitable)
         {

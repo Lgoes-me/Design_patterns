@@ -3,15 +3,22 @@ using UnityEngine;
 public class PickUpController : MonoBehaviour
 {
     [field: SerializeField] private PlayerController PlayerController { get; set; }
-    private HealthAndManaPowerUp PowerUp { get; set; }
 
-    private void Start()
+    public void PickUpTheHealthAndManaPowerUp()
     {
-        PowerUp = new HealthAndManaPowerUp(10, 10);
+        var powerUp = new HealthAndManaPowerUp(10, 10);
+        PlayerController.ReceivePowerUp(powerUp);
     }
 
-    public void PickUpThePowerUp()
+    public void PickUpTheHealthPowerUp()
     {
-        PlayerController.ReceivePowerUp(PowerUp);
+        var powerUp = new HealthPowerUp(5);
+        PlayerController.ReceivePowerUp(powerUp);
+    }
+
+    public void PickUpTheManaPowerUp()
+    {
+        var powerUp = new ManaPowerUp(3);
+        PlayerController.ReceivePowerUp(powerUp);
     }
 }
