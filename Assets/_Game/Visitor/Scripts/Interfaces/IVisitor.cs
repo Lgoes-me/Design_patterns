@@ -1,5 +1,8 @@
-public interface IVisitor
+namespace Visitor.Interfaces
 {
-    void Visit(IVisitable visitable);
+    public interface IVisitor
+    {
+        void Visit(IVisitable visitable);
+    }
 }
 

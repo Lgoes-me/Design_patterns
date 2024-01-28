@@ -1,13 +1,18 @@
 using UnityEngine;
+using Visitor.Components;
+using Visitor.PowerUps;
 
-public class PlayerController : MonoBehaviour
+namespace Visitor.Controllers
 {
-    [field: SerializeField] private HealthComponent HealthComponent { get; set; }
-    [field: SerializeField] private ManaComponent ManaComponent { get; set; }
-
-    public void ReceivePowerUp(BasePowerUp powerUp)
+    public class PlayerController : MonoBehaviour
     {
-        HealthComponent.Accept(powerUp);
-        ManaComponent.Accept(powerUp);
+        [field: SerializeField] private HealthComponent HealthComponent { get; set; }
+        [field: SerializeField] private ManaComponent ManaComponent { get; set; }
+
+        public void ReceivePowerUp(BasePowerUp powerUp)
+        {
+            HealthComponent.Accept(powerUp);
+            ManaComponent.Accept(powerUp);
+        }
     }
 }

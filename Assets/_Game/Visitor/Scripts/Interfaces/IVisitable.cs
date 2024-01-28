@@ -1,4 +1,7 @@
-﻿public interface IVisitable
+﻿namespace Visitor.Interfaces
 {
-    void Accept(IVisitor visitor);
+    public interface IVisitable
+    {
+        void Accept(IVisitor visitor);
+    }
 }

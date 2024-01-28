@@ -1,16 +1,20 @@
 using UnityEngine;
+using Visitor.Interfaces;
 
-public class ManaComponent : MonoBehaviour, IVisitable
+namespace Visitor.Components
 {
-    [field: SerializeField] private int Mana { get; set; }
-
-    public void ReceiveMana(int mana)
+    public class ManaComponent : MonoBehaviour, IVisitable
     {
-        Mana += mana;
-    }
+        [field: SerializeField] private int Mana { get; set; }
 
-    public void Accept(IVisitor visitor)
-    {
-        visitor.Visit(this);
+        public void ReceiveMana(int mana)
+        {
+            Mana += mana;
+        }
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
