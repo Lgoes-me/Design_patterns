@@ -1,13 +1,10 @@
-﻿using Factory.Controllers;
-using Factory.Domain;
+﻿using Factory.Domain;
 using UnityEngine;
 
 namespace Factory.Manager
 {
     public class EnemyManager : MonoBehaviour
     {
-        [field: SerializeField]
-        private EnemyController EnemyController { get; set; }
         private EnemyFactory EnemyFactory { get; set; }
         
         private void Start()
@@ -18,7 +15,7 @@ namespace Factory.Manager
         public void CreateEnemy()
         {
             var enemy = EnemyFactory.CreateEnemy();
-            EnemyController.Init(enemy);
+            enemy.DebugEnemy();
         }
     }
 }
