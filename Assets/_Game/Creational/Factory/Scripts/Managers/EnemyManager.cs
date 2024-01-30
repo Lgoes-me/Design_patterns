@@ -1,7 +1,7 @@
 ﻿using Factory.Domain;
 using UnityEngine;
 
-namespace Factory.Manager
+namespace Factory.Managers
 {
     public class EnemyManager : MonoBehaviour
     {
