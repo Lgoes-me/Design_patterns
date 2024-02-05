@@ -1,5 +1,5 @@
-﻿using System;
-using State.Domain;
+﻿using State.Domain;
+using State.Domain.PlayerState;
 using UnityEngine;
 using TMPro;
 

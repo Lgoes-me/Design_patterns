@@ -17,7 +17,6 @@ namespace State.Domain
         {
             State?.OnStateExit();
             State = state;
-            State.Init(PlayerController);
             State.OnStateEnter();
         }
 

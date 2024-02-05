@@ -1,6 +1,6 @@
 ﻿using State.Controllers;
 
-namespace State.Domain
+namespace State.Domain.PlayerState
 {
     public class IdleState : IState
     {

@@ -1,7 +1,7 @@
 ﻿using State.Controllers;
 using UnityEngine;
 
-namespace State.Domain
+namespace State.Domain.PlayerState
 {
     public class DefenseState : IState
     {
