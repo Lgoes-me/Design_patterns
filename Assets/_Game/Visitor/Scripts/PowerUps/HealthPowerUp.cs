@@ -1,17 +1,15 @@
-﻿using Visitor.Components;
+﻿using UnityEngine;
+using Visitor.Components;
 using Visitor.Interfaces;
 
 namespace Visitor.PowerUps
 {
+    [CreateAssetMenu]
     public class HealthPowerUp : BasePowerUp
     {
-        private int Health { get; }
-
-        public HealthPowerUp(int health)
-        {
-            Health = health;
-        }
-
+        [field: SerializeField]
+        private int Health { get; set; }
+        
         public override void Visit(IVisitable visitable)
         {
             switch (visitable)

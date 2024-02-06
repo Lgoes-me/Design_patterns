@@ -1,16 +1,14 @@
-﻿using Visitor.Components;
+﻿using UnityEngine;
+using Visitor.Components;
 using Visitor.Interfaces;
 
 namespace Visitor.PowerUps
 {
+    [CreateAssetMenu]
     public class ManaPowerUp : BasePowerUp
     {
-        private int Mana { get; }
-
-        public ManaPowerUp(int mana)
-        {
-            Mana = mana;
-        }
+        [field: SerializeField]
+        private int Mana { get; set; }
 
         public override void Visit(IVisitable visitable)
         {
